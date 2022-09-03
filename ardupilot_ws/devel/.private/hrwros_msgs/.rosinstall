@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/eymer/ardupilot_ws/devel/.private/hrwros_msgs/setup.sh

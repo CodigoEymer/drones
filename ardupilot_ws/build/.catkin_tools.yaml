@@ -1,0 +1,6 @@
+devel_space: /home/eymer/ardupilot_ws/devel
+install: false
+install_space: /home/eymer/ardupilot_ws/install
+profile: default
+source_space: /home/eymer/ardupilot_ws/src
+workspace: /home/eymer/ardupilot_ws
