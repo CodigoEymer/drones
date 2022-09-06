@@ -5,8 +5,8 @@ Este repositorio contiene el espacio de trabajo desarrollado para realizar la ge
 ## Prerrequisitos
 
 - Ubuntu 18.04
-- Gazebo 9
 - Ros Melodic
+- Gazebo 9
 - Clonar repositorios adicionales
 - Python
 - Pip
@@ -59,12 +59,6 @@ rosdep update
 ````
 ### Gazebo 9
 
-````
-sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable lsb_release -cs main" > /etc/apt/sources.list.d/gazebo-stable.list'
-````
-````
-wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add - s
-````
 ```` 
 sudo apt-get update 
 ````
@@ -125,8 +119,12 @@ echo 'export GAZEBO_RESOURCE_PATH=~/drone_iris_simulation/ardupilot_gazebo/world
 ````
 source ~/.bashrc
 ````
-
-
+#### Repositorio nuevos mundos
+````
+cd
+git clone https://github.com/chaolmu/gazebo_models_worlds_collection
+````
+Manualmente añadir los elementos de la carpeta de models y worlds de este repositorio en el repositorio de drone_iris_simulation/ardupilot_gazebo
 #### Instalar pip:
 ````
 sudo apt update                   
