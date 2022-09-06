@@ -5,10 +5,10 @@ Este repositorio contiene el espacio de trabajo desarrollado para realizar la ge
 ## Prerrequisitos
 
 - Ubuntu 18.04
-- Ros Melodic
 - Gazebo 9
+- Ros Melodic
 - Clonar repositorios adicionales
-- Python 2.7
+- Python
 - Pip
 - MAVProxy
 - Mavlink
@@ -57,7 +57,6 @@ sudo rosdep init
 ````
 rosdep update
 ````
-
 ### Gazebo 9
 
 ````
@@ -75,17 +74,13 @@ sudo apt-get install gazebo9
 ````
 sudo apt-get install libgazebo9-dev
 ````
-
 ### Clonar repositorios adicionales
 #### Repositorio Drone iris
 ````
 git clone https://github.com/Sebastian2218/drone_iris_simulation.git
 ````
 ````
-cd drone_iris_simulation
-````
-````
-cd ardupilot_gazebo
+cd drone_iris_simulation/cd ardupilot_gazebo
 ````
 ````
 mkdir build
@@ -103,7 +98,9 @@ make -j4
 sudo make install
 ````
 #### Repositorio Ardupilot
-
+````
+cd
+````
 ````
 cd drone_iris_simulation
 ````
@@ -120,10 +117,10 @@ git submodule update --init --recursive
 echo 'source /usr/share/gazebo/setup.sh' >> ~/.bashrc
 ````
 ````
-echo 'export GAZEBO_MODEL_PATH=~/ardupilot_gazebo/models' >> ~/.bashrc
+echo 'export GAZEBO_MODEL_PATH=~/drone_iris_simulation/ardupilot_gazebo/models' >> ~/.bashrc
 ````
 ````
-echo 'export GAZEBO_RESOURCE_PATH=~/ardupilot_gazebo/worlds:${GAZEBO_RESOURCE_PATH}' >> ~/.bashrc
+echo 'export GAZEBO_RESOURCE_PATH=~/drone_iris_simulation/ardupilot_gazebo/worlds:${GAZEBO_RESOURCE_PATH}' >> ~/.bashrc
 ````
 ````
 source ~/.bashrc
