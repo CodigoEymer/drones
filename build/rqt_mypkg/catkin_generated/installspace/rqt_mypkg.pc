@@ -1,0 +1,8 @@
+prefix=/home/eymer/catkinQ/install
+
+Name: rqt_mypkg
+Description: Description of rqt_mypkg
+Version: 0.1.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

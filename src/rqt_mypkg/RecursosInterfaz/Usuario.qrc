@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="Usu">
+    <file>LogosInterfaz/DronBlanco.png</file>
+    <file>LogosInterfaz/Univalle.png</file>
+    <file>LogosInterfaz/Usuario.png</file>
+  </qresource>
+</RCC>

@@ -1,0 +1,2 @@
+PruebaGUI:hrwrosv2/hrwros_msgs:hrwrosv2/hrwros_utilities:hrwrosv2/hrwros_week1:rqt_mypkg:uav
+-G CodeBlocks - Unix Makefiles -DCMAKE_BUILD_TYPE=Debug -DCATKIN_DEVEL_PREFIX=/home/eymer/catkinQ/devel -DCMAKE_INSTALL_PREFIX=/home/eymer/catkinQ/install
