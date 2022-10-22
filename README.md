@@ -154,3 +154,8 @@ Si no funciona el comando, usar este
 ````
 python -m pip install pymavlink
 ````
+
+#### Instalar Pytest
+````
+pip install pytest
+````
