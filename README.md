@@ -74,7 +74,7 @@ sudo apt-get install libgazebo9-dev
 git clone https://github.com/Sebastian2218/drone_iris_simulation.git
 ````
 ````
-cd drone_iris_simulation/cd ardupilot_gazebo
+cd drone_iris_simulation/ardupilot_gazebo
 ````
 ````
 mkdir build
@@ -159,5 +159,79 @@ python -m pip install pymavlink
 ````
 pip install pytest
 ````
+### Testeo de ardupilot y mundo Iris_arducopter_runway.word
+````
+gazebo --verbose drone_iris_simulation/ardupilot_gazebo/worlds/iris_arducopter_runway.world
+````
+````
+cd ~/drone_iris_simulation/ardupilot/ArduCopter
+../Tools/autotest/sim_vehicle.py -f gazebo-iris --console -I0
+````
+#### Comandos de MavProxy
+````
+mode GUIDED
+````
+````
+arm throttle
+````
+````
+takeoff 5
+````
+````
+position  30 0 0
+````
+
 ## Multi-UAV
 https://www.youtube.com/watch?v=r15Tc6e2K7Y
+
+1. Copiar modelo Iris_with_ardupilot la cantidad de veces segun los drones que se requieran. Asignarles nombres.
+2. Modificar dentro de cada modelo en el archivo model.config el nombre del modelo según la asignación del paso anterior.
+3. Modificar en el archivo model.sdf dentro de los mismos modelos las lineas de codigo <fdm_port_in> y <fdm_port_out> para definir los puertos estos deben escalarse de a 10 en 10.
+4. Modificar el Mundo donde se quieren incluir los modelos de los drones modificados y agregar al final las siguientes lineas.
+
+````
+    <model name="dron1">
+     <pose>0 0 0 0 0 0 </pose>
+     <include>
+       <uri>model://dron1</uri>
+     </include>
+    </model>
+    
+    <model name="dron2">
+     <pose>10 0 0 0 0 0 </pose>
+     <include>
+       <uri>model://dron2</uri>
+     </include>
+    </model>
+
+    <model name="dron3">
+     <pose>20 0 0 0 0 0 </pose>
+     <include>
+       <uri>model://dron3</uri>
+     </include>
+    </model>
+````
+5. Ejecutar mundo gazebo, y los ardupilot de cada dron siguiendo los siguientes comandos:
+
+###### Terminal 0
+````
+gazebo --verbose drone_iris_simulation/ardupilot_gazebo/worlds/iris_arducopter_runway.world
+````
+
+###### Terminal 1
+````
+cd ~/drone_iris_simulation/ardupilot/ArduCopter
+../Tools/autotest/sim_vehicle.py -f gazebo-iris --console -I0 --out=tcpin:0.0.0.0:8100
+````
+###### Terminal 2
+````
+cd ~/drone_iris_simulation/ardupilot/ArduCopter
+../Tools/autotest/sim_vehicle.py -f gazebo-iris --console -I1 --out=tcpin:0.0.0.0:8200
+````
+###### Terminal 3
+````
+cd ~/drone_iris_simulation/ardupilot/ArduCopter
+../Tools/autotest/sim_vehicle.py -f gazebo-iris --console -I2 --out=tcpin:0.0.0.0:8300
+````
+
+
