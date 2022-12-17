@@ -197,6 +197,10 @@ gazebo --verbose drone_iris_simulation/ardupilot_gazebo/worlds/iris_arducopter_r
 cd ~/drone_iris_simulation/ardupilot/ArduCopter
 ../Tools/autotest/sim_vehicle.py -f gazebo-iris --console -I0
 ````
+````
+cd ~/catkin_ws/src/gcs/launch
+roslaunch apm.launch
+````
 #### Comandos de MavProxy
 ````
 mode GUIDED
