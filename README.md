@@ -57,6 +57,17 @@ sudo rosdep init
 ````
 rosdep update
 ````
+### Crear Espacio de Trabajo
+````
+mkdir -p ~/catkin_ws/src
+````
+````
+cd ~/catkin_ws/
+````
+````
+catkin_make
+````
+
 ### Gazebo 9
 
 ```` 
@@ -140,7 +151,6 @@ pip install pexpect
 ````
 sudo apt-get install python           
 ````
-
 #### Instalar MAVProxy:
 ````
 sudo pip install MAVProxy            
@@ -159,6 +169,22 @@ python -m pip install pymavlink
 ````
 pip install pytest
 ````
+#### Instalar MavRos
+````
+sudo apt-get install ros-melodic-mavros ros-melodic-mavros-extras
+````
+````
+wget https://raw.githubusercontent.com/mavlink/mavros/master/mavros/scripts/install_geographiclib_datasets.sh
+chmod a+x install_geographiclib_datasets.sh
+./install_geographiclib_datasets.sh
+````
+mkdir launch
+cd launch
+````
+roscp mavros apm.launch apm.launch
+````
+En el archivo apm editar la linea 5 agregando la siguien ip
+
 ### Testeo de ardupilot y mundo Iris_arducopter_runway.word
 ````
 gazebo --verbose drone_iris_simulation/ardupilot_gazebo/worlds/iris_arducopter_runway.world
