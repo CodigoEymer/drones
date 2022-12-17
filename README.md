@@ -178,8 +178,12 @@ wget https://raw.githubusercontent.com/mavlink/mavros/master/mavros/scripts/inst
 chmod a+x install_geographiclib_datasets.sh
 ./install_geographiclib_datasets.sh
 ````
+````
 mkdir launch
+````
+````
 cd launch
+````
 ````
 roscp mavros apm.launch apm.launch
 ````
