@@ -268,4 +268,7 @@ cd ~/drone_iris_simulation/ardupilot/ArduCopter
 ../Tools/autotest/sim_vehicle.py -f gazebo-iris --console -I2 --out=tcpin:0.0.0.0:8300
 ````
 
+New installations
+sudo apt-get update
+sudo apt-get install python-pyqt5.qtwebsockets
 
