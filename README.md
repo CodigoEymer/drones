@@ -189,6 +189,14 @@ roscp mavros apm.launch apm.launch
 ````
 En el archivo apm editar la linea 5 agregando la siguien ip
 
+#### Instalar XAMPP
+https://todoxampp.com/descargar-e-instalar-xampp-para-linux-ubuntu/
+
+#### Instalar MySQLdb
+````
+pip install mysqlclient
+````
+
 ### Testeo de ardupilot y mundo Iris_arducopter_runway.word
 ````
 gazebo --verbose drone_iris_simulation/ardupilot_gazebo/worlds/iris_arducopter_runway.world
