@@ -62,7 +62,16 @@ rosdep update
 mkdir -p ~/catkin_ws/src
 ````
 ````
-cd ~/catkin_ws/
+cd ~/catkin_ws/src
+````
+````
+git clone https://github.com/ros-simulation/gazebo_ros_pkgs.git -b melodic-devel
+````
+````
+cd ..
+````
+````
+rosdep install --from-paths src --ignore-src -r -y
 ````
 ````
 catkin_make
